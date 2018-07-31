@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class JD_Sprider {
 
@@ -29,10 +28,6 @@ public class JD_Sprider {
     }
 
     public void spriderPetsInfoDataFromJD(String url) throws Exception {
-
-        //https://search.jd.com/Search?keyword=%E5%AE%A0%E7%89%A9%E6%B4%BB%E4%BD%93&enc=utf-8&page=1
-        //https://search.jd.com/Search?keyword=%E5%AE%A0%E7%89%A9%E6%B4%BB%E4%BD%93&enc=utf-8&page=3
-        //https://search.jd.com/Search?keyword=%E5%AE%A0%E7%89%A9%E6%B4%BB%E4%BD%93&enc=utf-8&page=5
 
         //循环遍历所有页码, 获取每一页的数据
         for (int i = 1; i <= 100; i++) {
@@ -62,11 +57,6 @@ public class JD_Sprider {
     }
 
     private void saveProductsFromPids(List<String> pids) throws Exception {
-//        private String breed; //品种
-//        private String shapes; //体型
-//        private String weight; //体重
-//        private String sex; //性别
-//        private String desc; //描述
 
         List<Pet> pets = new ArrayList<Pet>();
 
@@ -159,5 +149,4 @@ public class JD_Sprider {
 
         return pids;
     }
-
 }

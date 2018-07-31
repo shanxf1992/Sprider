@@ -13,9 +13,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,15 +22,15 @@ public class sprider_login {
 
         String link = "http://www.svn.club/user/login";
 
-//        uid: itcast
-//        pwd: www.itcast.cn
+//        uid: XXXXX
+//        pwd: www.XXXXX.cn
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(link);
 
         List<NameValuePair> nameValuePairList = new ArrayList<NameValuePair>();
-        nameValuePairList.add(new BasicNameValuePair("uid", "itcast"));
-        nameValuePairList.add(new BasicNameValuePair("pwd", "www.itcast.cn"));
+        nameValuePairList.add(new BasicNameValuePair("uid", "XXXXX"));
+        nameValuePairList.add(new BasicNameValuePair("pwd", "www.XXXXX.cn"));
 
         //设置post请求的 请求体
         HttpEntity httpEntity = new UrlEncodedFormEntity(nameValuePairList);
@@ -56,7 +53,6 @@ public class sprider_login {
             //获取登陆后的cookie信息
             Header[] headers = response.getHeaders("Set-Cookie");
             String cookie = headers[0].getValue();
-
 
             //重新发起请求
             httpClient = HttpClients.createDefault();
@@ -81,7 +77,5 @@ public class sprider_login {
         }else{
             //... ...
         }
-
     }
-
 }

@@ -18,7 +18,6 @@ public class Main {
             //获取小说所有章节内容
             qiDian_sprider.getNovelTexts(novelDetailPagesLinks);
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }

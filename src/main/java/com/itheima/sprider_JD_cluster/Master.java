@@ -1,18 +1,9 @@
 package com.itheima.sprider_JD_cluster;
 
-import com.itheima.utils.JDBCUtils;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-
-import javax.sql.DataSource;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 /**
  * 爬取京东搜索页手机的详细信息
  */
-
+//主要的完成的工作是将pid存放到 redis 中的 sprider_jd_master 队列中
 public class Master {
 
     public static void main(String[] args) {
@@ -24,12 +15,12 @@ public class Master {
         JD_Sprider jd_sprider = new JD_Sprider();
 
         try {
-            //开启新线程监视queue
+            //开启新线程监视 redis 中的 sprider_jd_master 队列
             MonitorQueue monitorQueue = new MonitorQueue();
             Thread monitor = new Thread(monitorQueue);
             monitor.start();
 
-            //将所有的pid都存放在 redis 中
+            //将所有的pid都存放在 redis 中的 sprider_jd_master 队列中
             jd_sprider.spriderPetsInfoDataFromJD(url);
 
         } catch (Exception e) {

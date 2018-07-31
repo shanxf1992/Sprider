@@ -4,7 +4,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 
 public class MonitorQueue implements Runnable{
-
     private ArrayBlockingQueue<String> queue;
     private ExecutorService pool;
 

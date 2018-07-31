@@ -9,7 +9,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -134,13 +133,8 @@ public class QiDian_Sprider {
 
             //写入小说的章节内容
             getNovelChapterContents(link, bw);
-
             bw.close();
-
-
-
         }
-
     }
 
     //获取小说指定章节的内容
@@ -167,7 +161,6 @@ public class QiDian_Sprider {
             bw.write(capterName);
             bw.flush();
             bw.newLine();
-
 
             //获取第一章节的内容
             Elements capters = document.select(".main-text-wrap")

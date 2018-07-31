@@ -1,6 +1,5 @@
 package com.itheima.sprider_JD_cluster;
 
-import com.itheima.utils.RedisUtil;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -11,7 +10,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import redis.clients.jedis.Jedis;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,8 +65,4 @@ public class JD_Sprider {
 
         }
     }
-
-
-
-
 }

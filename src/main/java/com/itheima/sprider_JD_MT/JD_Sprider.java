@@ -1,8 +1,5 @@
 package com.itheima.sprider_JD_MT;
 
-import com.itheima.entity.Pet;
-import com.itheima.utils.JDBCUtils;
-import org.apache.commons.dbutils.QueryRunner;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -12,14 +9,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import javax.sql.DataSource;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
-
-
 public class JD_Sprider {
-
     private CloseableHttpClient httpClients;
 
     //对象创建的时候进行初始化
